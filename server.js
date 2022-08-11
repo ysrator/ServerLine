@@ -2,7 +2,7 @@ const http = new XMLHttpRequest();
 const server = {
     get: function (id) {
         http.onload = function () {
-            return String("var t = this.responseText[id]");
+            return eval("var t = this.responseText[id]");
         }
         http.open("GET", "./ServerLine.txt", true);
         http.send();
