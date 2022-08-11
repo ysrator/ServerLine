@@ -2,10 +2,11 @@ const http = new XMLHttpRequest();
 const server = {
     get: function (id) {
         http.onload = function () {
-            return this.responseText[id];
+            var t = this.responseText[id];
         }
-        http.open("GET", "./ServerLine.txt");
+        http.open("GET", "ServerLine.txt", true);
         http.send();
+        return t;
     },
     edit: function (id, newConcent) {
         //Github App
