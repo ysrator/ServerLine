@@ -13,4 +13,4 @@ const server = {
 }
 
 
-document.write(server.get("test"));
+document.write(server.get(1));
