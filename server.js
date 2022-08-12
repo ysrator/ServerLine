@@ -1,7 +1,13 @@
 const http = new XMLHttpRequest();
+http.ontimeout = function () {
+    console.error("ServerLine error: Request time out.");
+}
+http.onload = function () {
+    console.info("ServerLine info: Data was loaded.");
+}
 const server = {
-    repo,
-    owner,
+    repo: "",
+    owner: "",
     login: function (repositoryname, owner) {
         http.open("GET", "https://api.github.com/repos/" + owner + "/" + repositoryname);
         http.send();
@@ -10,7 +16,7 @@ const server = {
             server.owner = owner;
         }
         else {
-            console.error("ServerLine error: Repository not found!");
+            console.error("ServerLine error: Repository not found.");
         }
     },
     get: function (id) {
@@ -19,7 +25,10 @@ const server = {
         return http.request[id];
     },
     edit: function (id, newConcent) {
-        //Github App
+        /*
+        Github Application --ServerLine_Connector
+            .save
+        */
     }
 }
 
