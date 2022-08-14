@@ -1,1 +1,1 @@
-"Hello World"
+openingText="Hello World"
