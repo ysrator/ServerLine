@@ -1,7 +1,4 @@
 const http = new XMLHttpRequest();
-if (document.domain="server.yasirator.ml") {
-    document.body.innerHTML = "";
-}
 http.ontimeout = function () {
     console.error("ServerLine error: Request time out.");
 }
