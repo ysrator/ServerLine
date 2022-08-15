@@ -43,7 +43,6 @@ const yasirator = {
         ext.id = "appY(" + appName + ")";
         http.open("GET", "https://server.yasirator.ml/ServerLine.txt");
         http.send();
-        
         ext.innerHTML = "";
     }
 }
