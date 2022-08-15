@@ -1,1 +1,1 @@
-openingText="Hello World"
+Hello World!

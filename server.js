@@ -29,5 +29,21 @@ const server = {
         Github Application --ServerLine_Connector
             .save
         */
+    },
+    db: function () {
+        http.open("GET", "./ServerLine.txt");
+        http.send();
+        return http.request;
+    }
+}
+const yasirator = {
+    login: function (id) {},
+    embed: function (appName) {
+        var ext = document.createElement("div");
+        ext.id = "appY(" + appName + ")";
+        http.open("GET", "https://server.yasirator.ml/ServerLine.txt");
+        http.send();
+        
+        ext.innerHTML = "";
     }
 }
