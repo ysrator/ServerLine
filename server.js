@@ -59,4 +59,3 @@ const yasirator = {
     }
 }
 
- 
