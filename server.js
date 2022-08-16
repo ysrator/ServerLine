@@ -5,6 +5,9 @@ http.ontimeout = function () {
 http.onload = function () {
     console.info("ServerLine info: Data was loaded.");
 }
+http.onerror = function () {
+    console.error("ServerLine error: HTTP error dedected.");
+}
 const server = {
     repo: "",
     owner: "",
@@ -20,6 +23,12 @@ const server = {
         }
     },
     get: function (id) {
+        if (server.repo = !null) {
+            http.open("GET", "./ServerLine.txt");
+        }
+        else {
+            http.open("GET", server.owner + ".github.io/" + server.repo + "ServerLine.txt");
+        }
         http.open("GET", "./ServerLine.txt");
         http.send();
         return http.request[id];
@@ -31,7 +40,12 @@ const server = {
         */
     },
     db: function () {
-        http.open("GET", "./ServerLine.txt");
+        if (server.repo = !null) {
+            http.open("GET", "./ServerLine.txt");
+        }
+        else {
+            http.open("GET", server.owner + ".github.io/" + server.repo + "/ServerLine.txt");
+        }
         http.send();
         return http.request;
     }
@@ -44,5 +58,8 @@ const yasirator = {
         http.open("GET", "https://server.yasirator.ml/ServerLine.txt");
         http.send();
         ext.innerHTML = "";
+        var ext2 = document.getElementById("appY(" + appName + ")");
+        document.body.insertBefore(ext, ext2);
     }
 }
+
