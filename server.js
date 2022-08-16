@@ -1,4 +1,6 @@
 const http = new XMLHttpRequest();
+let repo;
+let owner;
 http.ontimeout = function () {
     console.error("ServerLine error: Request time out.");
 }
@@ -9,25 +11,23 @@ http.onerror = function () {
     console.error("ServerLine error: HTTP error dedected.");
 }
 const server = {
-    repo: "",
-    owner: "",
     login: function (repositoryname, owner) {
         http.open("GET", "https://api.github.com/repos/" + owner + "/" + repositoryname);
         http.send();
         if (http.request = !null) {
-            server.repo = repositoryname;
-            server.owner = owner;
+            repo = repositoryname;
+            owner = owner;
         }
         else {
             console.error("ServerLine error: Repository not found.");
         }
     },
     get: function (id) {
-        if (server.repo = !null) {
+        if (repo = !null) {
             http.open("GET", "./ServerLine.txt");
         }
         else {
-            http.open("GET", server.owner + ".github.io/" + server.repo + "ServerLine.txt");
+            http.open("GET", owner + ".github.io/" + repo + "ServerLine.txt");
         }
         http.open("GET", "./ServerLine.txt");
         http.send();
@@ -40,8 +40,8 @@ const server = {
         */
     },
     db: function () {
-        if (server.repo = null) http.open("GET", "./ServerLine.txt");
-        else http.open("GET", server.owner + ".github.io/" + server.repo + "/ServerLine.txt");
+        if (repo = null) http.open("GET", "./ServerLine.txt");
+        else http.open("GET", owner + ".github.io/" + repo + "/ServerLine.txt");
         http.send();
         return http.response;
     }
