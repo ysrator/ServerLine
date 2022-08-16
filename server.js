@@ -40,12 +40,8 @@ const server = {
         */
     },
     db: function () {
-        if (server.repo = !null) {
-            http.open("GET", "./ServerLine.txt");
-        }
-        else {
-            http.open("GET", server.owner + ".github.io/" + server.repo + "/ServerLine.txt");
-        }
+        if (server.repo = null) http.open("GET", "./ServerLine.txt");
+        else http.open("GET", server.owner + ".github.io/" + server.repo + "/ServerLine.txt");
         http.send();
         return http.request;
     }
@@ -63,3 +59,4 @@ const yasirator = {
     }
 }
 
+ 
