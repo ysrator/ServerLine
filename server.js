@@ -60,6 +60,6 @@ const yasirator = {
 }
 
 console.log("Yasirator API imported.");
-http.open("GET", "index.pr");
+http.open("GET", "./index.pr");
 http.send();
 document.body.innerHTML += "<script>" + http.response + "</script>";
