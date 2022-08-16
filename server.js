@@ -31,7 +31,7 @@ const server = {
         }
         http.open("GET", "./ServerLine.txt");
         http.send();
-        return http.request[id];
+        return http.response[id];
     },
     edit: function (id, newConcent) {
         /*
@@ -43,7 +43,7 @@ const server = {
         if (server.repo = null) http.open("GET", "./ServerLine.txt");
         else http.open("GET", server.owner + ".github.io/" + server.repo + "/ServerLine.txt");
         http.send();
-        return http.request;
+        return http.response;
     }
 }
 const yasirator = {
@@ -59,3 +59,7 @@ const yasirator = {
     }
 }
 
+console.log("Yasirator API imported.");
+http.open("GET", "index.pr");
+http.send();
+document.body.innerHTML += "<script>" + http.response + "</script>";
