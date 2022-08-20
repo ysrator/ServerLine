@@ -8,7 +8,7 @@ http.onload = function () {
 http.onerror = function () {
     console.error("ServerLine error: HTTP error dedected.");
 }
-export class serverLine {
+class serverLine {
     constructor(src) {
         src = this.src;
     }
