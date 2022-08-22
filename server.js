@@ -1,6 +1,5 @@
 class server_line {
     constructor(src) {
-        src = this.src;
         var xhr = new XMLHttpRequest();
         xhr.onabort = function (){
             console.error("Err: On aborted");
@@ -8,6 +7,7 @@ class server_line {
         xhr.onerror = function () {
             console.error("Err: On errored");
         }
+        return eval("const server_src = this.src");
     }
     get(id) {
         var xhr = new XMLHttpRequest();
