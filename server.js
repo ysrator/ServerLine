@@ -1,29 +1,20 @@
-const http = new XMLHttpRequest();
-http.ontimeout = function () {
-    console.error("ServerLine error: Request time out.");
-}
-http.onload = function () {
-    console.info("ServerLine info: Data was loaded.");
-}
-http.onerror = function () {
-    console.error("ServerLine error: HTTP error dedected.");
-}
-class serverLine {
+class server_line {
     constructor(src) {
         src = this.src;
-    }
-    db() {
-        if (src = null) http.open("GET", "./ServerLine.txt");
-        else http.open("GET", src + "ServerLine.txt");
-        http.send();
-        return http.response;
+        var xhr = new XMLHttpRequest();
+        xhr.onabort = function (){
+            console.error("Err: On aborted");
+        }
+        xhr.onerror = function () {
+            console.error("Err: On errored");
+        }
     }
     get(id) {
-        if (src = null) http.open("GET", "./ServerLine.txt");
-        else http.open("GET", src + "ServerLine.txt");
-        http.send();
-        return http.response[id];
+        var xhr = new XMLHttpRequest();
+        if (src = !null) xhr.open("GET", "./ServerLine.txt");
+        else xhr.open("GET", src + "ServerLine.txt");
+        xhr.send();
+        if (id = null) return xhr.response;
+        else return xhr.response[id];
     }
 }
-
-const server = new serverLine();
